@@ -1,0 +1,27 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.brand {
+  font-size: 8rem;
+  font-weight: 700;
+  /* background: rgb(255, 213, 0);
+  background: linear-gradient(
+    337deg,
+    rgba(255, 213, 0, 1) 0%,
+    rgba(234, 53, 72, 1) 47%,
+    rgba(55, 0, 255, 1) 95%
+  ); */
+
+  /* //i to put the color in the background */
+  background: -webkit-linear-gradient(
+    337deg,
+    rgba(255, 213, 0, 1) 0%,
+    rgba(234, 53, 72, 1) 47%,
+    rgba(55, 0, 255, 1) 95%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
