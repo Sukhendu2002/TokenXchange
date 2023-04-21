@@ -1,4 +1,6 @@
 # TokenXchange
+![image](https://user-images.githubusercontent.com/76804228/233605797-325bb4b4-ce9d-4de6-9c52-634dcfe59384.png)
+
 TokenXchange is a decentralized platform that enables users to swap and send tokens across different blockchain networks. The platform supports cross-chain transactions, allowing users to exchange tokens from one blockchain network to another seamlessly. This provides users with greater flexibility and accessibility to a wider range of digital assets.
 
 TokenXchange operates on a peer-to-peer network, eliminating the need for intermediaries, such as banks or other financial institutions. This ensures faster transaction speeds and lower fees compared to traditional financial systems. Additionally, TokenXchange offers users increased security and privacy as it is built on a decentralized blockchain network.
