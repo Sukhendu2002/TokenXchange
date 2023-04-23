@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React from "react";
 import axios from "axios";
 import { ethers, Contract } from "ethers";
@@ -263,7 +265,6 @@ const SwapCrad = ({ address }) => {
       slippageTolerance: 2,
       widgetId: 76, // get your unique wdiget id by contacting us on Telegram
     };
-
     const pathfinder_response = await fetchPathfinderData(args);
     console.log(pathfinder_response);
     // setting up wallet
@@ -276,9 +277,7 @@ const SwapCrad = ({ address }) => {
       import.meta.env.VITE_PRIVATE_KEY,
       provider
     );
-
     console.log("Wallet setup successfully");
-
     await checkAndSetAllowance(
       wallet,
       args.fromTokenAddress === chainMapping[chainId].NATIVE.address
@@ -289,7 +288,6 @@ const SwapCrad = ({ address }) => {
         : chainMapping[chainId].reserveHandler_address, // Router's OneSplit Address for same-chain transactions and Router's Reserve Token Handler for cross-chain transactions
       ethers.constants.MaxUint256 // amount to approve
     );
-
     if (
       args.feeTokenAddress.toUpperCase() !==
         args.fromTokenAddress.toUpperCase() &&
@@ -304,24 +302,20 @@ const SwapCrad = ({ address }) => {
         ethers.constants.MaxUint256 // amount to approve
       );
     }
-
     if (!pathfinder_response.txn.execution.gasPrice) {
       pathfinder_response.txn.execution.gasPrice =
         await wallet.provider.getGasPrice();
     }
-
     if (pathfinder_response.txn.execution.value) {
       pathfinder_response.txn.execution.value = ethers.utils.hexlify(
         ethers.BigNumber.from(pathfinder_response.txn.execution.value)
       );
     }
-
     if (!pathfinder_response.txn.execution.gasLimit) {
       pathfinder_response.txn.execution.gasLimit = ethers.utils.hexlify(
         ethers.BigNumber.from(1000000)
       );
     }
-
     const tx = await wallet.sendTransaction(pathfinder_response.txn.execution);
     try {
       await tx.wait();
@@ -334,12 +328,10 @@ const SwapCrad = ({ address }) => {
       );
       return;
     }
-
     let params = {
       txHash: tx.hash,
       networkId: args.fromTokenChainId,
     };
-
     setTimeout(async function () {
       let status = await fetchStatus(params);
       console.log(status);
